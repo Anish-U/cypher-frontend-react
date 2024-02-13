@@ -2,12 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- TODO: Add favicon to public folder -->
+    <link rel="icon" type="ico" href="/favicon.ico" />
+    
     <title>Cypher</title>
+
+    <!-- TODO: Update metadata information -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta data-rh="true" name="description" content="The premier platform connecting with verified freelance coders!" />
+    <link rel="canonical" href="https://cypher.com" />
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // AWS Amplify needs this to work. See https://github.com/aws/aws-sdk-js/issues/3673
+      const isBrowser = () => typeof window !== 'undefined';
+      const isGlobal = () => typeof global !== 'undefined';
+      if (!isGlobal() && isBrowser()) {
+        var global = window;
+      }
+    </script>
   </body>
 </html>
